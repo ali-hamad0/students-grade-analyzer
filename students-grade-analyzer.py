@@ -1,6 +1,6 @@
 #1- Prints students names and grades
 
-def dispaly_student_summary(stnames, grades):
+def display_student_summary(stnames, grades):
     print("here are the students names and their grades : ")
     for x in range(len(stnames)):
         print(stnames[x] + "->" + str(grades[x]))
@@ -34,32 +34,30 @@ def count_passed(grades):
             count += 1
     return count
 
+#main
 
-def main():
-    num_of_students =  int(input("Enter the number of students"))
+num_of_students =  int(input("Enter the number of students"))
+    
+stnames = [] 
+grades = [] 
 
-    stnames = [] 
-    grades = [] 
-
-    for i in range(num_of_students):
+for i in range(num_of_students):
         name = input("Enter student name : " )
         grade = int(input("Enter " + name + "'s grade : "))
         stnames.append(name)
         grades.append(grade)
 
-    dispaly_student_summary(stnames , grades)
+display_student_summary(stnames , grades)
 
-    avg_grades = get_avg_grade(grades)
-    print("the average grade of the class is : " + str(avg_grades))
+avg_grades = get_avg_grade(grades)
+print("the average grade of the class is : " + str(avg_grades))
 
-    highest_name, highest_grade = get_highest_grade(stnames,grades)
-    print("the highest grade is :" + str(highest_grade)  + " and it's earned by :" + highest_name )
+highest_name, highest_grade = get_highest_grade(stnames,grades)
+print("the highest grade is :" + str(highest_grade)  + " and it's earned by :" + highest_name )
 
-    count_pass = count_passed(grades)
-    print("the number of students who passed (with grade >=60) is : " + str(count_pass))
+count_pass = count_passed(grades)
+print("the number of students who passed (with grade >=60) is : " + str(count_pass))
 
 
         
-main()    
-
 
